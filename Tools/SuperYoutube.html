@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SuperYoutube</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #cdb4db;
+    }
+
+    h1 {
+      color: #ffc8dd;
+      text-align: center;
+      font-size: 32px;
+    }
+
+    form {
+      margin: 0 auto;
+      width: 500px;
+      padding: 20px;
+      background-color: #ffafcc;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #bde0fe;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #bde0fe;
+    }
+
+    button {
+      background-color: #a2d2ff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #embedContainer {
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    iframe {
+      margin: 0 auto;
+      display: block;
+      width: 789px;
+      height: 444px;
+    }
+  </style>
+</head>
+<body>
+  <h1>SuperYoutube</h1>
+
+  <form id="embedForm">
+    <label for="youtubeURL">Enter YouTube URL:</label>
+    <input type="text" id="youtubeURL" name="youtubeURL" placeholder="Paste YouTube URL here">
+    <button type="button" onclick="embedVideo()">Embed Video</button>
+  </form>
+
+  <div id="embedContainer"></div>
+
+  <script>
+    function embedVideo() {
+      const youtubeURL = document.getElementById('youtubeURL').value;
+      const embedURL = youtubeURL.replace('watch?v=', 'embed/');
+
+      const iframeHTML = `
+        <iframe
+          width="789"
+          height="444"
+          src="${embedURL}"
+          title="SuperYoutube"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      `;
+
+      document.getElementById('embedContainer').innerHTML = iframeHTML;
+    }
+  </script>
+</body>
+</html>
