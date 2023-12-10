@@ -6,9 +6,13 @@ This project is a collection of tools and resources designed to help students ov
 **What you'll find inside:**
 
 *Unblockers*: Utilities and scripts to bypass website and content restrictions.
+
 *Proxies*: Servers that mask your IP address and allow access to blocked websites.
+
 *VPNs*: Secure connections that encrypt your internet traffic and provide anonymity.
+
 *Guides and tutorials*: Easy-to-follow instructions for setting up and using the provided tools.
+
 *Troubleshooting*: Answers to common problems and assistance with specific issues.
 
 **Please note:**
