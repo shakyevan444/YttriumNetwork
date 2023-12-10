@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html
+ 
+lang="en">
+
+<head>
+
+  
+<meta
+ 
+charset="UTF-8">
+
+  
+<meta
+ 
+name="viewport"
+ 
+content="width=device-width, initial-scale=1.0">
+
+  
+<title>Spacebar Counter</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #cdb4db;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #container {
+      background-color: #ffc8dd;
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #counter {
+      font-size: 4em;
+      color: #ffafcc;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1 id="counter">0</h1>
+  </div>
+
+  <script>
+    const counterElement = document.getElementById('counter');
+    let count = 0;
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === ' ') {
+        count++;
+        counterElement.textContent = count;
+      }
+    });
+  </script>
+</body>
+</html>
