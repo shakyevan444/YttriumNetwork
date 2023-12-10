@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html
+  
+  lang="en">
+  
+  <head>
+    
+    
+    <meta
+      
+      charset="UTF-8">
+    
+    
+    <meta
+      
+      name="viewport"
+      
+      content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>YouTube Video Downloader</title>
+    <style>
+      body {
+        background-color: #cdb4db;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      .container {
+        background-color: #ffc8dd;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      h1, label {
+        color: #a2d2ff;
+      }
+      
+      #video-url,
+      #download-message {
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+        background-color: #ffaacc;
+        color: #000;
+      }
+      
+      #mp3-option {
+        margin-right: 10px;
+      }
+      
+      button {
+        background-color: #bde0fe;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>YouTube Video Downloader</h1>
+      <input type="text" id="video-url" placeholder="Enter YouTube video URL">
+      <label for="mp3-option">Convert to MP3:</label>
+      <input type="checkbox" id="mp3-option">
+      <button onclick="downloadVideo()">Download Video</button>
+      <p id="download-message"></p>
+    </div>
+
+    <script>
+      function downloadVideo() {
+        // Get the video URL from the input field
+        const videoUrl = document.getElementById("video-url").value;
+        
+        // Get the MP3 conversion option
+        const convertToMp3 = document.getElementById("mp3-option").checked;
+        
+        // Validate the URL
+        if (!isValidUrl(videoUrl)) {
+          alert("Invalid YouTube video URL");
+          return;
+        }
+        
+        // Send the URL and MP3 conversion option to the server for processing (replace this with actual server-side code)
+        // This is just a mock implementation for demonstration
+        document.getElementById("download-message").innerHTML = "Downloading video...";
+        
+        // Simulate server response after 2 seconds
+        setTimeout(() => {
+          if (convertToMp3) {
+            document.getElementById("download-message").innerHTML = "MP3 download completed!";
+          } else {
+            document.getElementById("download-message").innerHTML = "Video download completed!";
+          }
+        }, 2000);
+      }
+      
+      function isValidUrl(url) {
+        return /https?:\/\/(www\.)?youtube.com\/watch\?v=([a-zA-Z0-9_-]+)/.test(url);
+      }
+    </script>
+  </body>
+</html>
